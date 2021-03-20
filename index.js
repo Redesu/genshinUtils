@@ -13,7 +13,7 @@ const interval = config.time * 60 * 1000
 setInterval(_ => {
     for (const user of users) {
         if (user.resina < 160) {
-                ++user.resina
+            ++user.resina
         }
     }
     saveManager.writeOnJson()
@@ -21,6 +21,11 @@ setInterval(_ => {
 
 client.on('ready', () => {
     console.log(`pai on as ${client.user.tag}!`);
+    client.user.setActivity('!help', {
+            type: 'PLAYING'
+        })
+        .then(presence => console.log(`Activity set to ${presence.activities[0].name}`))
+        .catch(console.error);
 
     const commandFiles = fs
         .readdirSync(path.resolve(__dirname, 'commands'))
