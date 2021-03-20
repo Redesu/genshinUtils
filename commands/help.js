@@ -10,11 +10,11 @@ module.exports = {
         .setTitle('Commands')
         .addFields({
             name: '!resina',
-            value: `Permite visualizar sua resina atual, para configura-la use **!resina set numero**, não pode ser maior que 160.`,
+            value: `Permite visualizar sua resina atual, para configura-la use **!resina set <numero>**, não pode ser maior que 160.`,
             inline: true
         }, {
             name: '!profile',
-            value: `Visualize sua UID e rank de aventura, sete-os com **!profile set rank** e **!profile set uid**`
+            value: `Visualize sua UID e rank de aventura, sete-os com **!profile set <rank>** e **!profile set <uid>**`
         })
         .setFooter(`Developer: Red#0400`, userURL.avatarURL())
     message.channel.send(embed)

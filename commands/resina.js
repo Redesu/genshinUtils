@@ -1,18 +1,21 @@
-
 const Discord = require('discord.js')
 const config = require('../config.json')
+const jsonUtil = require('../jsonUtil.js')
 module.exports = {
     name: "resina",
     execute: async (message, args, user) => {
         let userURL = await message.client.users.fetch("230850304432799744")
         const isNumber = !isNaN(parseInt(args[1]))
         if (!isNumber && args[0] === "set") {
+            message.channel.send('**Como usar?** exemplo:\n!resina set 34')
             return
         }
         if (args[0] === "set") {
             user.resina = parseInt(args[1])
             if (user.resina > 160)
                 user.resina = 160
+            jsonUtil.writeOnJson()
+
         }
         const userHour = Math.floor(config.time * (config.maxResina - user.resina) / 60)
         const userMinutes = Math.floor((config.time * (config.maxResina - user.resina)) - userHour * 60)
