@@ -5,8 +5,9 @@ const config = require('./config.json')
 const client = new Discord.Client();
 const User = require('./user.js')
 const users = require('./users.json') || []
-const jsonUtil = require('./jsonUtil.js')
+const SaveManager = require('./jsonUtil.js')
 let commandsByName = {}
+const saveManager = new SaveManager()
 const interval = config.time * 60 * 1000
 
 setInterval(_ => {
@@ -15,7 +16,7 @@ setInterval(_ => {
                 ++user.resina
         }
     }
-    jsonUtil.writeOnJson()
+    saveManager.writeOnJson()
 }, interval)
 
 client.on('ready', () => {

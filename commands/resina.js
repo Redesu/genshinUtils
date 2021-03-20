@@ -1,6 +1,7 @@
 const Discord = require('discord.js')
 const config = require('../config.json')
-const jsonUtil = require('../jsonUtil.js')
+const SaveManager = require('../jsonUtil.js')
+const saveManager = new SaveManager()
 module.exports = {
     name: "resina",
     execute: async (message, args, user) => {
@@ -14,7 +15,7 @@ module.exports = {
             user.resina = parseInt(args[1])
             if (user.resina > 160)
                 user.resina = 160
-            jsonUtil.writeOnJson()
+            saveManager.writeOnJson()
 
         }
         const userHour = Math.floor(config.time * (config.maxResina - user.resina) / 60)

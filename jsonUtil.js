@@ -1,7 +1,7 @@
 const users = require('./users.json') || []
 const fs = require('fs')
-class JsonUtil {
-    static writeOnJson() {
+module.exports = class SaveManager {
+    writeOnJson() {
     const dataUsers = JSON.stringify(users)
       fs.writeFile('./users.json', dataUsers, 'utf8', (err) => {
           if (err) {
@@ -12,4 +12,3 @@ class JsonUtil {
       })
     }
   }
-  module.exports = JsonUtil;
