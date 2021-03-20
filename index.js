@@ -21,7 +21,7 @@ setInterval(_ => {
 
 client.on('ready', () => {
     console.log(`pai on as ${client.user.tag}!`);
-    client.user.setActivity('!help', {
+    client.user.setActivity('?help', {
             type: 'PLAYING'
         })
         .then(presence => console.log(`Activity set to ${presence.activities[0].name}`))
