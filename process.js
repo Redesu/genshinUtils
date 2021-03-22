@@ -1,4 +1,4 @@
-process.stdin.resume(); //so the program will not close instantly
+/*process.stdin.resume(); //so the program will not close instantly
 
 function exitHandler(options, exitCode) {
     if (options.cleanup && exitCode !== 0) {
@@ -40,4 +40,4 @@ process.on('SIGUSR2', exitHandler.bind(null, {
 //catches uncaught exceptions
 process.on('uncaughtException', exitHandler.bind(null, {
     exit: true
-}));
+}));*/

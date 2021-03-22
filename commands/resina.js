@@ -18,6 +18,7 @@ module.exports = {
             saveManager.writeOnJson()
 
         }
+
         const userHour = Math.floor(config.time * (config.maxResina - user.resina) / 60)
         const userMinutes = Math.floor((config.time * (config.maxResina - user.resina)) - userHour * 60)
         const embed = new Discord.MessageEmbed()
