@@ -15,6 +15,9 @@ module.exports = {
         }, {
             name: '!profile',
             value: `Visualize sua UID e rank de aventura, sete-os com **!profile set <rank>** e **!profile set <uid>**`
+        },{
+            name: '!notification',
+            value: `Configure um canal para eu notifica-lo quando sua resina estiver prestes a encher, use **!notification set <canal>**`
         })
         .setFooter(`Developer: Red#0400`, userURL.avatarURL())
     message.channel.send(embed)
