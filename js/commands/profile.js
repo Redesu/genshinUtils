@@ -1,7 +1,10 @@
+const Command = require('../command.js')
+const config = require('../../config.json')
 const Discord = require('discord.js')
-module.exports = {
-    name: "profile",
-    execute: async (message, args, user) => {
+module.exports = class Profile extends Command{
+    name = `profile` 
+    description = `Mostra o perfil so usuario`
+    async execute(message, args, user){
         const isNumber = !isNaN(parseInt(args[2]))
         let userURL = await message.client.users.fetch("230850304432799744")
         if (!isNumber && args[0] === "set") {

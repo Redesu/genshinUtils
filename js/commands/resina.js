@@ -1,10 +1,12 @@
+const Command = require('../command.js')
+const config = require('../../config.json')
 const Discord = require('discord.js')
-const config = require('../config.json')
 const SaveManager = require('../jsonUtil.js')
 const saveManager = new SaveManager()
-module.exports = {
-    name: "resina",
-    execute: async (message, args, user) => {
+module.exports = class Resina extends Command{
+    name = `resina`
+    description = `Mostra a resina atual do usuario`
+    async execute(message, args, user){
         let userURL = await message.client.users.fetch("230850304432799744")
         const isNumber = !isNaN(parseInt(args[1]))
         if (!isNumber && args[0] === "set") {

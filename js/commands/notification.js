@@ -1,11 +1,11 @@
+const Command = require('../command.js')
 const Discord = require('discord.js')
-const config = require('../config.json')
 const SaveManager = require('../jsonUtil.js')
 const saveManager = new SaveManager()
-
-module.exports = {
-    name: "notification",
-    execute: async (message, args) => {
+module.exports = class Notification extends Command {
+    name = `notification`
+    description = `Permite notificar um determinado canal`
+    async execute(message, args){
         const checkChannel = !(typeof message.mentions.channels.first() === `undefined`)
         if (args[0] === "set") {
             if (!checkChannel) {
