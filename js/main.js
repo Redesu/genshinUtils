@@ -34,7 +34,7 @@ module.exports = class Main {
     getCommandsFromFiles() {
         const commands = []
         console.log(process.cwd()) 
-        const commandFiles = fs.readdirSync(`./commands`)
+        const commandFiles = fs.readdirSync(`js/commands`)
         for (const file of commandFiles) {
             const Command = require(`./commands/${file}`)
             commands.push(new Command())

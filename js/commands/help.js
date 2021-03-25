@@ -29,7 +29,7 @@ module.exports = class Help extends Command {
     }
     getCommandsFromFiles() {
         let commandsByName = {}
-        const commandFiles = fs.readdirSync(`./commands`).filter(file => file.endsWith('.js'))
+        const commandFiles = fs.readdirSync(`js/commands`).filter(file => file.endsWith('.js'))
         for (const file of commandFiles) {
             const command = require(`./${file}`)
             commandsByName[command.name] = command
